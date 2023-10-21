@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .home-section {
+    @apply py-[5rem] lg:py-[7rem] 2xl:py-[9rem] px-[9%];
+  }
+  .input-box {
+    @apply flex flex-wrap justify-between;
+  }
+  .footer-box {
+    @apply py-[1rem] grow shrink basis-[25rem];
+  }
+  .footer-box a {
+    @apply py-[0.7rem] text-[1.5rem] block text-xravel-color-white-2 hover:text-xravel-color-orange-1 hover:underline duration-300;
+  }
+  .contact-field {
+    @apply w-full md:w-[49%] my-[1rem] p-[1rem] text-[1.7rem] text-xravel-color-black-6;
+  }
+  .section-heading {
+    @apply text-xravel-color-orange-1 uppercase text-center text-5xl md:text-6xl mb-8 sm:mb-20 2xl:mb-28 relative z-[1] before:inline-block before:w-1/2 before:h-[80%] before:absolute before:z-[-1] before:left-1/4 before:bottom-[20%] before:bg-amber-50 before:-skew-y-2;
+  }
+  .footer-heading {
+    @apply text-[2.5rem] py-[0.7rem] text-white capitalize;
+  }
+}
+
+
+:root {
+  font-family: 'Poppins', sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  transition: all .3s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-grey-700);
+
+  transition: color 0.3s, background-color 0.3s;
+  min-height: 100vh;
+
+  font-size: 1.6rem;
+}
+
+.container-wrapper {
+  padding: 2rem 6rem;
+}
+
+.box-gallery:hover .gallery-content {
+  top: 0;
+}
+
+@media(max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media(max-width: 991px) {
+  header {
+    padding: 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+@media(max-width: 768px) {
+  header nav{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #333;
+    border-top: .1rem solid rgba(255, 255, 255, .2);
+    padding: 1rem 2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  header nav.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@media(max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
