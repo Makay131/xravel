@@ -60,7 +60,7 @@ function Packages() {
     return (
         <section className="home-section">
             <h1 className="section-heading">packages</h1>
-            <div className="box-container flex flex-wrap gap-[2rem]">
+            <div className="box-container-grid gap-5">
                 {dummyData.map(data => <PackageItem key={data.id} data={data} />)}
             </div>
         </section>
