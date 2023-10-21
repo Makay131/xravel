@@ -37,7 +37,7 @@ function Services() {
     return (
         <section className="home-section">
             <h1 className="section-heading">Services</h1>
-            <div className="box-container flex flex-wrap gap-[1.5rem]">
+            <div className="box-container-grid gap-5">
                 {dummyData.map(item => <ServiceItem key={item.title} data={item} />)}
             </div>
         </section>

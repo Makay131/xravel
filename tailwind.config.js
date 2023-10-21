@@ -40,6 +40,10 @@ export default {
       },
       boxShadow: {
         'xravel-shadow-1': '0 1rem 2rem rgba(0, 0, 0, 0.1)',
+      },
+      screens: {
+        'purgatory-end': { 'raw': '(min-width: 1900px)' },
+        // => @media (min-height: 800px) { ... }
       }
     },
   },

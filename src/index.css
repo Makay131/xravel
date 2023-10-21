@@ -6,6 +6,9 @@
   .home-section {
     @apply py-[5rem] lg:py-[7rem] 2xl:py-[9rem] px-[9%];
   }
+  .box-container-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 purgatory-end:grid-cols-6;
+  }
   .input-box {
     @apply flex flex-wrap justify-between;
   }
