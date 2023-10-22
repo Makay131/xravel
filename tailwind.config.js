@@ -9,6 +9,7 @@ export default {
       colors: {
         "xravel-color-orange-1": "#ffa500",
         "xravel-color-orange-2": "rgba(255, 165, 0, 0.1)",
+        "xravel-color-orange-3": "rgba(255, 251, 100, 0.5)",
         "xravel-color-primary-2": "#2696E9",
         "xravel-color-primary-3": "#1680AC",
         "xravel-color-white-1": "#f7f7f7",
