@@ -3,33 +3,33 @@ import ServiceItem from "../interface/ServiceItem";
 const dummyData = [
     {
         title: 'affordable hotels',
-        icon: './pics/antarctica.jpg',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, eaque!',
+        icon: './svgs/service-icons/hotel.svg',
+        description: 'Discover budget-friendly accommodations that prioritize comfort and convenience, ensuring a pleasant stay without breaking the bank.',
     },
     {
         title: 'food and drinks',
-        icon: './pics/antarctica.jpg',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, eaque!',
+        icon: './svgs/service-icons/food.svg',
+        description: 'Indulge in a diverse culinary journey with our delectable offerings, ranging from local delicacies to international cuisines, satisfying every palate.',
     },
     {
         title: 'safety measures',
-        icon: './pics/antarctica.jpg',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, eaque!',
+        icon: './svgs/service-icons/safety.svg',
+        description: ' Your safety is our top priority; rest assured as we implement stringent safety protocols, ensuring a worry-free and secure travel experience for all.',
     },
     {
         title: 'around the world',
-        icon: './pics/antarctica.jpg',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, eaque!',
+        icon: './svgs/service-icons/world.svg',
+        description: 'Embark on a global odyssey and explore diverse cultures, breathtaking landscapes, and historical landmarks, creating unforgettable memories worldwide.',
     },
     {
         title: 'affordable flights',
-        icon: './pics/antarctica.jpg',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, eaque!',
+        icon: './svgs/service-icons/flight.svg',
+        description: 'Travel affordably without compromising on quality; find budget-friendly flight options that take you to your dream destinations, making travel dreams a reality.',
     },
     {
         title: 'extreme adventures',
-        icon: './pics/antarctica.jpg',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, eaque!',
+        icon: './svgs/service-icons/adventure.svg',
+        description: 'For adrenaline enthusiasts, experience the thrill of a lifetime with our extreme adventures, offering heart-pounding activities in the most exhilarating destinations on the planet.',
     },
 ];
 
