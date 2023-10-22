@@ -2,34 +2,22 @@ import GalleryItem from "../interface/GalleryItem";
 
 const dummyData = [
     {
-        title: 'affordable hotels',
         src: './pics/antarctica.jpg',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, eaque!',
     },
     {
-        title: 'food and drinks',
-        src: './pics/antarctica.jpg',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, eaque!',
+        src: './pics/dubai.jpg',
     },
     {
-        title: 'safety measures',
-        src: './pics/antarctica.jpg',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, eaque!',
+        src: './pics/hawaii.jpg',
     },
     {
-        title: 'around the world',
-        src: './pics/antarctica.jpg',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, eaque!',
+        src: './pics/iceland.jpg',
     },
     {
-        title: 'affordable flights',
-        src: './pics/antarctica.jpg',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, eaque!',
+        src: './pics/california.jpg',
     },
     {
-        title: 'extreme adventures',
-        src: './pics/antarctica.jpg',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, eaque!',
+        src: './pics/belize.webp',
     },
 ];
 
