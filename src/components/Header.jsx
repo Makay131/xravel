@@ -2,7 +2,7 @@ import { useState } from "react"
 import { createPortal } from "react-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai"
 import ModalContent from "./ModalContent";
-import Login from "../interface/Login";
+import Form from "../interface/Form";
 
 function Header() {
     const [showModal, setShowModal] = useState(false);
@@ -42,7 +42,7 @@ function Header() {
 
             {showModal && createPortal(
                 <ModalContent>
-                    <Login onShowModal={setShowModal}/>
+                    <Form onShowModal={setShowModal}/>
                 </ModalContent>
             , document.body)}
         </header>

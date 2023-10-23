@@ -19,7 +19,7 @@
     @apply py-[0.7rem] text-[1.5rem] block text-xravel-color-white-2 hover:text-xravel-color-orange-1 hover:underline duration-300;
   }
   .contact-field {
-    @apply w-full md:w-[49%] my-[1rem] p-[1rem] text-[1.7rem] text-xravel-color-black-6;
+    @apply w-full md:w-[49%] my-[1rem] p-[1rem] text-[1.7rem] text-xravel-color-black-6 outline-xravel-color-orange-1 border border-xravel-color-orange-2;
   }
   .section-heading {
     @apply text-xravel-color-orange-1 uppercase text-center text-5xl md:text-6xl mb-8 sm:mb-20 2xl:mb-28 relative z-[1] before:inline-block before:w-1/2 before:h-[80%] before:absolute before:z-[-1] before:left-1/4 before:bottom-[20%] before:bg-amber-50 before:-skew-y-2;
