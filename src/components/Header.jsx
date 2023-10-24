@@ -5,7 +5,7 @@ import ModalContent from "./ModalContent";
 import Form from "../interface/Form";
 import BaseButton from "../interface/BaseButton";
 
-function Header() {
+function Header({onScrollTo}) {
     const [showModal, setShowModal] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
     function handleModalClick() {
@@ -31,10 +31,10 @@ function Header() {
             </a>
 
             <nav className={`text-white ${showMenu ? 'active' : ''}`}>
-                <span className="header-nav-link">Home</span>
-                <span className="header-nav-link">Locations</span>
-                <span className="header-nav-link">Services</span>
-                <span className="header-nav-link">Gallery</span>
+                <span className="header-nav-link" onClick={() => onScrollTo('home')}>Home</span>
+                <span className="header-nav-link" onClick={() => onScrollTo('locations')}>Locations</span>
+                <span className="header-nav-link" onClick={() => onScrollTo('services')}>Services</span>
+                <span className="header-nav-link" onClick={() => onScrollTo('gallery')}>Gallery</span>
             </nav>
 
 

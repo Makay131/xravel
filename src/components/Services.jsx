@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import ServiceItem from "../interface/ServiceItem";
 
 const dummyData = [
@@ -33,9 +34,9 @@ const dummyData = [
     },
 ];
 
-function Services() {
+const ServicesSection = (props, ref) => {
     return (
-        <section className="home-section">
+        <section className="home-section" ref={ref}>
             <h1 className="section-heading">Services</h1>
             <div className="box-container-grid gap-5">
                 {dummyData.map(item => <ServiceItem key={item.title} data={item} />)}
@@ -44,4 +45,4 @@ function Services() {
     )
 }
 
-export default Services
+export const Services = forwardRef(ServicesSection);

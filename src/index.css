@@ -15,8 +15,8 @@
   .footer-box {
     @apply py-[1rem] grow shrink basis-[25rem];
   }
-  .footer-box a {
-    @apply py-[0.7rem] text-[1.5rem] block text-xravel-color-white-2 hover:text-xravel-color-orange-1 hover:underline duration-300;
+  .footer-box span, .footer-box a {
+    @apply py-[0.7rem] cursor-pointer text-[1.5rem] block text-xravel-color-white-2 hover:text-xravel-color-orange-1 hover:underline duration-300;
   }
   .contact-field {
     @apply w-full md:w-[49%] my-[1rem] p-[1rem] text-[1.7rem] text-xravel-color-black-6 outline-xravel-color-orange-1 border border-xravel-color-orange-2;
