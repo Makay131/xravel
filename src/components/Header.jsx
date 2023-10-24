@@ -31,10 +31,10 @@ function Header() {
             </a>
 
             <nav className={`text-white ${showMenu ? 'active' : ''}`}>
-                <a className="mr-7" href="#">Home</a>
-                <a className="mr-7" href="#">Locations</a>
-                <a className="mr-7" href="#">Services</a>
-                <a className="mr-7" href="#">Gallery</a>
+                <span className="header-nav-link">Home</span>
+                <span className="header-nav-link">Locations</span>
+                <span className="header-nav-link">Services</span>
+                <span className="header-nav-link">Gallery</span>
             </nav>
 
 
