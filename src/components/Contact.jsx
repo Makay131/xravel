@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { contactsReducer } from "../reducers/contactsReducer";
+import BaseButton from "./BaseButton"
 
 const initialContacts = {
     name: '',
@@ -11,7 +12,7 @@ const initialContacts = {
 function Contact() {
     const [{name, email, number, subject, message}, dispatch] = useReducer(contactsReducer, initialContacts);
     function handleChangeInput(e, type) {
-            dispatch({type: 'updateInput', payload: {field: type, value: e.target.value}});
+            dispatch({type: 'updateInputs', payload: {field: type, value: e.target.value}});
     }
     function handleSubmit(e) {
         e.preventDefault();
@@ -25,7 +26,7 @@ function Contact() {
             <h1 className="section-heading">Contact</h1>
             <div className="row flex items-center flex-wrap gap-[1.5rem]">
                 <div className="image grow shrink basis-[35rem]">
-                    <img className="w-full" src="./pics/antarctica.jpg" alt="" />
+                    <img className="w-full" src="./pics/travel.svg" alt="" />
                 </div>
                 <form className="grow shrink basis-[50rem] p-[2rem] shadow-xravel-shadow-1 rounded-[0.5rem]" onSubmit={handleSubmit}>
                     <div className="input-box">
@@ -37,7 +38,7 @@ function Contact() {
                         <input className="contact-field" type="text" placeholder="Subject" value={subject} onChange={(e) => handleChangeInput(e, 'subject')} />
                     </div>
                     <textarea className="contact-field h-[20rem] resize-none w-full" name="" id="" cols="30" rows="10" placeholder="Your message..." value={message} onChange={(e) => handleChangeInput(e, 'message')}></textarea>
-                    <button>Send Message</button>
+                    <BaseButton>Send Message</BaseButton>
                 </form>
             </div>
         </section>
