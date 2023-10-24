@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai"
 import ModalContent from "./ModalContent";
 import Form from "../interface/Form";
+import BaseButton from "./BaseButton";
 
 function Header() {
     const [showModal, setShowModal] = useState(false);
@@ -36,9 +37,8 @@ function Header() {
                 <a className="mr-7" href="#">Gallery</a>
             </nav>
 
-            <div className="text-white" onClick={handleModalClick}>
-                Book Now
-            </div>
+
+            <BaseButton onButtonClicked={handleModalClick}>Book Now</BaseButton>
 
             {showModal && createPortal(
                 <ModalContent>
