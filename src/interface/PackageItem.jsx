@@ -1,13 +1,13 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai"
-import BaseButton from "../components/BaseButton";
+import BaseButton from "./BaseButton";
 
 function PackageItem({data}) {
     const filledStars = Array.from({length: data.starsCount}, (v, i) => i);
     const outlineStars = Array.from({length: 5 - data.starsCount}, (v, i) => i);
     return (
         <div className="box rounded-[0.5rem] overflow-hidden shadow-xravel-shadow-1">
-            <img src={data.imageUrl} alt={`Picture of ${data.name}`} className="w-full h-[25rem] object-cover object-center" />
+            <img src={data.imageUrl} alt={`Picture of ${data.name}`} className="w-full h-[25rem] object-cover object-center hover:scale-105 duration-300" />
             <div className="content p-[2rem]">
                 <h3 className="text-[2rem] flex items-center gap-2 text-xravel-color-black-6"><span className="text-xravel-color-orange-1"><FaLocationDot /></span> {data.name}</h3>
                 <p className="text-[1.7rem] py-[1rem] text-xravel-color-black-7 min-h-auto sm:min-h-[100px]">{data.description}</p>

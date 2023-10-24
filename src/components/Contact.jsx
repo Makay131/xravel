@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { contactsReducer } from "../reducers/contactsReducer";
-import BaseButton from "./BaseButton"
+import BaseButton from "../interface/BaseButton"
 
 const initialContacts = {
     name: '',

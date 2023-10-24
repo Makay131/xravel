@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai"
 import ModalContent from "./ModalContent";
 import Form from "../interface/Form";
-import BaseButton from "./BaseButton";
+import BaseButton from "../interface/BaseButton";
 
 function Header() {
     const [showModal, setShowModal] = useState(false);

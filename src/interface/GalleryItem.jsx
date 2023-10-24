@@ -1,4 +1,4 @@
-import BaseButton from "../components/BaseButton"
+import BaseButton from "./BaseButton"
 
 function GalleryItem({data}) {
     return (

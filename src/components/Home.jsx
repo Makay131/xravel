@@ -1,5 +1,5 @@
 import { useState } from "react";
-import BaseButton from "./BaseButton";
+import BaseButton from "../interface/BaseButton";
 
 const vidBTNClass = `w-[1.5rem] h-[1.5rem] inline-block rounded-[50%] bg-white cursor-pointer my-0 mx-[2rem]`;
 const vidBTNActiveClass = `bg-xravel-color-orange-1`
