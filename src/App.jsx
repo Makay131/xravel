@@ -29,7 +29,7 @@ function App() {
   return (
     <>
       <Header onScrollTo={scrollToSection} />
-      <Home ref={homeRef} />
+      <Home onScrollTo={scrollToSection} ref={homeRef} />
       <BrandsSlider />
       <Packages ref={locationsRef} />
       <Services ref={servicesRef} />

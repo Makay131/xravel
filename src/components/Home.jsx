@@ -26,7 +26,7 @@ const dummyData = [
     },
 ];
 const arrayLength = dummyData.length;
-const HomeSection = (props, ref) => {
+const HomeSection = ({onScrollTo}, ref) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const videoButtons = Array.from({length: arrayLength}, (_, i) => i + 1);
 
@@ -38,7 +38,7 @@ const HomeSection = (props, ref) => {
             <div className="text-center">
                 <h3 className="text-[4.5rem] lg:text-8xl font-bold text-xravel-color-orange-1 uppercase [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">adventure is worthwile</h3>
                 <p className="text-[2.5rem] lg:mt-3 lg:text-5xl capitalize text-white py-[0.5rem] px-0 mb-5 sm:mb-6 lg:mb-10 drop-shadow-[1px_1px_10px_rgba(255,255,299)]">discover new places with us, adventure awaits</p>
-                <BaseButton type="big">Discover More</BaseButton>
+                <BaseButton type="big" onButtonClicked={() => onScrollTo('locations')}>Discover More</BaseButton>
             </div>
 
             <div className="p-[0.8rem] rounded-[5rem] bg-xravel-color-overlay-1 relative top-[10rem]">
