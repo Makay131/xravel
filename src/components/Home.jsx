@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import BaseButton from "../interface/BaseButton";
 
 const vidBTNClass = `w-[1.5rem] h-[1.5rem] inline-block rounded-[50%] bg-white cursor-pointer my-0 mx-[2rem]`;
@@ -26,7 +26,7 @@ const dummyData = [
     },
 ];
 const arrayLength = dummyData.length;
-function Home() {
+const HomeSection = (props, ref) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const videoButtons = Array.from({length: arrayLength}, (_, i) => i + 1);
 
@@ -34,7 +34,7 @@ function Home() {
         setActiveIndex(index);
     }
     return (
-        <section className="home-section min-h-screen flex items-center justify-center flex-col relative z-0">
+        <section className="home-section min-h-screen flex items-center justify-center flex-col relative z-0" ref={ref}>
             <div className="text-center">
                 <h3 className="text-[4.5rem] lg:text-8xl font-bold text-xravel-color-orange-1 uppercase [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">adventure is worthwile</h3>
                 <p className="text-[2.5rem] lg:mt-3 lg:text-5xl capitalize text-white py-[0.5rem] px-0 mb-5 sm:mb-6 lg:mb-10 drop-shadow-[1px_1px_10px_rgba(255,255,299)]">discover new places with us, adventure awaits</p>
@@ -52,4 +52,4 @@ function Home() {
     )
 }
 
-export default Home
+export const Home = forwardRef(HomeSection);

@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import PackageItem from "../interface/PackageItem";
 
 const dummyData = [
@@ -56,9 +57,9 @@ const dummyData = [
         id: 6,
     },
 ];
-function Packages() {
+const PackagesSection = (props, ref) => {
     return (
-        <section className="home-section">
+        <section className="home-section" ref={ref}>
             <h1 className="section-heading">packages</h1>
             <div className="box-container-grid gap-5">
                 {dummyData.map(data => <PackageItem key={data.id} data={data} />)}
@@ -67,4 +68,4 @@ function Packages() {
     )
 }
 
-export default Packages
+export const Packages = forwardRef(PackagesSection);

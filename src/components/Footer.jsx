@@ -1,4 +1,4 @@
-function Footer() {
+function Footer({onScrollTo}) {
     return (
         <section className="home-section bg-xravel-color-black-6">
             <div className="box-container flex flex-wrap gap-[2rem]">
@@ -15,10 +15,10 @@ function Footer() {
                 </div>
                 <div className="footer-box">
                     <h3 className="footer-heading">quick links</h3>
-                    <a href="#">Home</a>
-                    <a href="#">Locations</a>
-                    <a href="#">Services</a>
-                    <a href="#">Gallery</a>
+                    <span onClick={() => onScrollTo('home')}>Home</span>
+                    <span onClick={() => onScrollTo('locations')}>Locations</span>
+                    <span onClick={() => onScrollTo('services')}>Services</span>
+                    <span onClick={() => onScrollTo('gallery')}>Gallery</span>
                 </div>
                 <div className="footer-box">
                     <h3 className="footer-heading">follow us</h3>

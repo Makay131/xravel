@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import GalleryItem from "../interface/GalleryItem";
 
 const dummyData = [
@@ -27,9 +28,9 @@ const dummyData = [
     },
 ];
 
-function Gallery() {
+const GallerySection = (props, ref) => {
     return (
-        <section className="home-section">
+        <section className="home-section" ref={ref}>
             <h1 className="section-heading">Gallery</h1>
             <div className="box-container-grid gap-5">
                 {dummyData.map(item => <GalleryItem key={item.id} data={item} />)}
@@ -38,4 +39,4 @@ function Gallery() {
     )
 }
 
-export default Gallery
+export const Gallery = forwardRef(GallerySection)
