@@ -26,7 +26,7 @@ function Contact() {
             <h1 className="section-heading">Contact</h1>
             <div className="row flex items-center flex-wrap gap-[1.5rem]">
                 <div className="image grow shrink basis-[35rem]">
-                    <img className="w-full" src="./pics/travel.svg" alt="" />
+                    <img className="w-full" src="/pics/travel.svg" alt="" />
                 </div>
                 <form className="grow shrink basis-[50rem] p-[2rem] shadow-xravel-shadow-1 rounded-[0.5rem]" onSubmit={handleSubmit}>
                     <div className="input-box">
