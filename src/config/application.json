@@ -1,0 +1,20 @@
+{
+    "sidebar": [
+        {
+            "name": "Locations",
+            "type": "link",
+            "path": "locations",
+            "element": "gps"
+        },
+        {
+            "name": "My Packages",
+            "type": "link",
+            "path": "mylocations",
+            "element": "card"
+        },
+        {
+            "name": "Logout",
+            "element": "plug"
+        }
+    ]
+}
