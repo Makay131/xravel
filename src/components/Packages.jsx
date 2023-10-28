@@ -4,7 +4,7 @@ import PackageItem from "../interface/PackageItem";
 const dummyData = [
     {
         name: 'Antarctica',
-        imageUrl: './pics/antarctica.jpg',
+        imageUrl: '/pics/antarctica.jpg',
         description: 'Embrace the endless ice adventure with penguins and much more!',
         starsCount: 5,
         generalPrice: 120,
@@ -13,7 +13,7 @@ const dummyData = [
     },
     {
         name: 'Dubai',
-        imageUrl: './pics/dubai.jpg',
+        imageUrl: '/pics/dubai.jpg',
         description: "Dive into Dubai's dazzling dreams such as ziplining and dessert trips!",
         starsCount: 4,
         generalPrice: 120,
@@ -22,7 +22,7 @@ const dummyData = [
     },
     {
         name: 'Hawaii',
-        imageUrl: './pics/hawaii.jpg',
+        imageUrl: '/pics/hawaii.jpg',
         description: "Hawaiian paradise awaits you with its extreme waves!",
         starsCount: 5,
         generalPrice: 120,
@@ -31,7 +31,7 @@ const dummyData = [
     },
     {
         name: 'Iceland',
-        imageUrl: './pics/iceland.jpg',
+        imageUrl: '/pics/iceland.jpg',
         description: "Icelandic wonders beckon by natural beauties and volcanoes!",
         starsCount: 5,
         generalPrice: 120,
@@ -40,7 +40,7 @@ const dummyData = [
     },
     {
         name: 'California',
-        imageUrl: './pics/california.jpg',
+        imageUrl: '/pics/california.jpg',
         description: "Conquer the desert's fiery heart with a death staring heat!",
         starsCount: 3,
         generalPrice: 120,
@@ -49,7 +49,7 @@ const dummyData = [
     },
     {
         name: 'Belize',
-        imageUrl: './pics/belize.webp',
+        imageUrl: '/pics/belize.webp',
         description: "Nature's hidden gem. You are being summoned by deep waters!",
         starsCount: 4,
         generalPrice: 120,
