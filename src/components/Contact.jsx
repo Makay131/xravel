@@ -1,14 +1,9 @@
 import { useReducer } from "react";
-import { contactsReducer } from "../reducers/contactsReducer";
+import { contactsReducer, initialContacts } from "../reducers/contactsReducer";
 import BaseButton from "../interface/BaseButton"
+import toast from "react-hot-toast";
 
-const initialContacts = {
-    name: '',
-    email: '',
-    number: '',
-    subject: '',
-    message: '',
-}
+
 function Contact() {
     const [{name, email, number, subject, message}, dispatch] = useReducer(contactsReducer, initialContacts);
     function handleChangeInput(e, type) {
@@ -16,10 +11,13 @@ function Contact() {
     }
     function handleSubmit(e) {
         e.preventDefault();
-        if(!name || !email || !number || !subject || !message) return; //TODO: show error here according to which field is empty
+        if(!name || !email || !number || !subject || !message) {
+            toast.error("Please fill all the fields!")
+            return;
+        }
         const result = {name, email, number, subject, message};
-        console.log(result);
-        //TODO: return initial state if the process is ok
+        toast.success(`Thank you for your message, ${result.name}! We will be replying you shortly.`)
+        dispatch({type: "resetInputs"})
     }
     return (
         <section className="home-section">

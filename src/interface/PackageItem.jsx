@@ -1,6 +1,7 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai"
 import BaseButton from "./BaseButton";
+import toast from "react-hot-toast";
 
 function PackageItem({data, appOptions, booked, navigate}) {
 
