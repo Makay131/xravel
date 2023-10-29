@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import PackageItem from "../interface/PackageItem";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import useApp from "../hooks/useApp";
 
 const dummyData = [
     {
@@ -59,13 +60,13 @@ const dummyData = [
     },
 ];
 const PackagesSection = (props, ref) => {
-    const {pathname} = useLocation();
-    const isApp = pathname.includes('app');
+    const navigate = useNavigate();
+    const appOptions = useApp();
     return (
         <section className="home-section" ref={ref}>
             <h1 className="section-heading">packages</h1>
-            <div className={`${isApp ? 'box-container-grid-app gap-5' : 'box-container-grid gap-5'}`}>
-                {dummyData.map(data => <PackageItem key={data.id} data={data} />)}
+            <div className={`${appOptions.isApp ? 'box-container-grid-app gap-5' : 'box-container-grid gap-5'}`}>
+                {dummyData.map(data => <PackageItem key={data.id} data={data} appOptions={appOptions} navigate={navigate} />)}
             </div>
         </section>
     )
