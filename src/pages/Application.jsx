@@ -9,7 +9,7 @@ function Application() {
             <div className="z-20 h-screen fixed top-0 -left-[280px] lg:left-0 w-[280px] bg-xravel-color-black-3 shadow-2xl peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
                 <Sidebar />
             </div>
-            <div className="lg:pl-[280px]">
+            <div className="lg:pl-[280px] z-[15]">
                 <Outlet />
             </div>
 

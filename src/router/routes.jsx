@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from "../pages/HomeLayout";
 import Application from "../pages/Application";
 import { Packages } from "../components/Packages";
-import Contact from "../components/Contact";
 import SingleLocation from "../pages/SingleLocation";
+import MyPackages from "../pages/MyPackages";
 
 export const routes = createBrowserRouter([
     {
@@ -30,7 +30,7 @@ export const routes = createBrowserRouter([
         },
         {
           path: "mylocations",
-          element: <Contact />
+          element: <MyPackages />
         },
       ]
     }

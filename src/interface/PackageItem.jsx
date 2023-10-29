@@ -2,7 +2,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai"
 import BaseButton from "./BaseButton";
 
-function PackageItem({data, appOptions, navigate}) {
+function PackageItem({data, appOptions, booked, navigate}) {
 
     const handleButtonClicked = () => {
         if(appOptions.isApp) navigate(`${appOptions.goToPath !== null ? (appOptions.goToPath + '/' + data.id) : data.id}`);
@@ -21,7 +21,8 @@ function PackageItem({data, appOptions, navigate}) {
                 <div className="stars flex items-center text-4xl">{filledStars.map(item => <span className="text-xravel-color-orange-1" key={item}><AiFillStar /></span>)}{outlineStars.length > 0 && outlineStars.map(item => <span className="text-xravel-color-orange-1" key={item}><AiOutlineStar /></span>)}</div>
                 <div className="price text-[2.5rem] mt-2 mb-5 pt-[1rem] text-xravel-color-black-6"><span className= "font-semibold">{`$${data.generalPrice}`}</span> <span className="text-xravel-color-black-7 text-[1.8rem] line-through">{`$${data.discountPrice}`}</span></div>
                 <div className="flex justify-end">
-                        <BaseButton onButtonClicked={handleButtonClicked}>Book now</BaseButton>
+                        {!booked && <BaseButton onButtonClicked={handleButtonClicked}>Book now</BaseButton>}
+                        {booked && <BaseButton disabled={booked}>Booked</BaseButton>}
                 </div>
             </div>
         </div>
