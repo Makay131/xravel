@@ -1,3 +1,11 @@
+export const initialContacts = {
+    name: '',
+    email: '',
+    number: '',
+    subject: '',
+    message: '',
+}
+
 export function contactsReducer(state, action) {
     switch(action.type) {
         case "updateInputs":
@@ -6,7 +14,7 @@ export function contactsReducer(state, action) {
                 [action.payload.field]: action.payload.value,
             }
         case "resetInputs":
-            return action.payload;
+            return initialContacts;
         default: throw new Error('Unknown action type')
     }
 }
