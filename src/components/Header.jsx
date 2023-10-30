@@ -8,7 +8,6 @@ import Logo from "../assets/logo/Logo";
 import HomeNavLinks from "../interface/HomeNavLinks";
 
 function Header({onScrollTo, showModal, onShowModal}) {
-    
     const [showMenu, setShowMenu] = useState(false);
     function handleModalClick() {
         onShowModal(true)
