@@ -3,11 +3,11 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai"
 import BaseButton from "./BaseButton";
 import toast from "react-hot-toast";
 
-function PackageItem({data, appOptions, booked, navigate}) {
+function PackageItem({data, appOptions, booked, navigate, onShowModal}) {
 
     const handleButtonClicked = () => {
         if(appOptions.isApp) navigate(`${appOptions.goToPath !== null ? (appOptions.goToPath + '/' + data.id) : data.id}`);
-        else console.log('TODO: open login form')
+        else onShowModal(true);
     }
 
     const filledStars = Array.from({length: data.starsCount}, (v, i) => i);

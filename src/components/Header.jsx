@@ -6,11 +6,11 @@ import Form from "../interface/Form";
 import BaseButton from "../interface/BaseButton";
 import Logo from "../assets/logo/Logo";
 
-function Header({onScrollTo}) {
-    const [showModal, setShowModal] = useState(false);
+function Header({onScrollTo, showModal, onShowModal}) {
+    
     const [showMenu, setShowMenu] = useState(false);
     function handleModalClick() {
-        setShowModal(true)
+        onShowModal(true)
     }
     function handleMenuClick() {
         setShowMenu(!showMenu)
@@ -37,7 +37,7 @@ function Header({onScrollTo}) {
 
             {showModal && createPortal(
                 <ModalContent>
-                    <Form onShowModal={setShowModal}/>
+                    <Form onShowModal={onShowModal}/>
                 </ModalContent>
             , document.body)}
         </header>
