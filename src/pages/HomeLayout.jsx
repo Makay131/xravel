@@ -1,4 +1,5 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react';
+
 import BrandsSlider from '../components/BrandsSlider'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
@@ -9,6 +10,8 @@ import {Services} from '../components/Services'
 import {Gallery} from '../components/Gallery'
 
 function HomeLayout() {
+    const [showModal, setShowModal] = useState(false);
+
     const homeRef = useRef(null);
     const locationsRef = useRef(null);
     const servicesRef = useRef(null);
@@ -26,10 +29,10 @@ function HomeLayout() {
     };
     return (
         <>
-            <Header onScrollTo={scrollToSection} />
+            <Header onScrollTo={scrollToSection} showModal={showModal} onShowModal={setShowModal} />
             <Home onScrollTo={scrollToSection} ref={homeRef} />
             <BrandsSlider />
-            <Packages ref={locationsRef} />
+            <Packages ref={locationsRef} onShowModal={setShowModal} />
             <Services ref={servicesRef} />
             <Gallery ref={galleryRef} />
             <Contact />

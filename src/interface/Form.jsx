@@ -4,6 +4,10 @@ import Login from "./Login";
 import { useState } from "react";
 import Reset from "./Reset";
 
+import {getUsers} from "../services/index";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+
 
 function Form({onShowModal}) {
     const [activeForm, setActiveForm] = useState('login');
@@ -13,13 +17,18 @@ function Form({onShowModal}) {
     const [rePassword, setRePassword] = useState("");
     const [fullname, setFullname] = useState("");
 
-    function handleFormSubmit(e) {
+    const navigate = useNavigate();
+
+    async function handleFormSubmit(e) {
       e.preventDefault();
       let result = {};
       if(activeForm === 'login') {
         if(!email.length || !password.length) return;
         result = {...result, email, password};
-        console.log(result);
+        const response = await getUsers();
+        if(response.data.filter(res => res.email === email)) {
+            navigate('/app')
+          }
       }
       if(activeForm === 'signup') {
         if(!email.length || !password.length || !rePassword.length || !fullname.length) return;

@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import PackageItem from "../interface/PackageItem";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useApp from "../hooks/useApp";
 
 const dummyData = [
@@ -59,14 +59,14 @@ const dummyData = [
         id: 6,
     },
 ];
-const PackagesSection = ({dataDummy, booked = false}, ref) => {
+const PackagesSection = ({dataDummy, booked = false, onShowModal}, ref) => {
     const navigate = useNavigate();
     const appOptions = useApp();
     return (
         <section className="home-section" ref={ref}>
             <h1 className="section-heading">packages</h1>
             <div className={`${appOptions.isApp ? 'box-container-grid-app gap-5' : 'box-container-grid gap-5'}`}>
-                {(dataDummy ? dataDummy : dummyData).map(data => <PackageItem key={data.id} data={data} appOptions={appOptions} booked={booked} navigate={navigate} />)}
+                {(dataDummy ? dataDummy : dummyData).map(data => <PackageItem key={data.id} onShowModal={onShowModal} data={data} appOptions={appOptions} booked={booked} navigate={navigate} />)}
             </div>
         </section>
     )
