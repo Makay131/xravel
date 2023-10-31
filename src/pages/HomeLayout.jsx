@@ -8,9 +8,12 @@ import {Home} from '../components/Home'
 import {Packages} from '../components/Packages'
 import {Services} from '../components/Services'
 import {Gallery} from '../components/Gallery'
+import { useLoaderData } from 'react-router-dom';
 
 function HomeLayout() {
     const [showModal, setShowModal] = useState(false);
+
+    const {packages, gallery} = useLoaderData();
 
     const homeRef = useRef(null);
     const locationsRef = useRef(null);
@@ -32,13 +35,12 @@ function HomeLayout() {
             <Header onScrollTo={scrollToSection} showModal={showModal} onShowModal={setShowModal} />
             <Home onScrollTo={scrollToSection} ref={homeRef} />
             <BrandsSlider />
-            <Packages ref={locationsRef} onShowModal={setShowModal} />
+            <Packages ref={locationsRef} onShowModal={setShowModal} data={packages} />
             <Services ref={servicesRef} />
-            <Gallery ref={galleryRef} />
+            <Gallery ref={galleryRef} data={gallery} />
             <Contact />
             <Footer onScrollTo={scrollToSection} />
         </>
     )
 }
-
 export default HomeLayout

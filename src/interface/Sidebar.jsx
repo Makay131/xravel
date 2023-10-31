@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Logo from "../assets/logo/Logo";
 import UserCard from "../components/UserCard";
@@ -9,6 +9,13 @@ import AppConfig from "../config/application.json";
 const linkClass = "flex items-center gap-4 text-white hover:text-xravel-color-orange-1 transition";
 
 function Sidebar() {
+    const navigate = useNavigate();
+
+    function handleLogout() {
+        //TODO: delete user session
+        navigate("/");
+    }
+
     const elements = {
         gps: <AiFillEnvironment />,
         card: <AiFillIdcard />,
@@ -34,7 +41,9 @@ function Sidebar() {
                                         {item.name}
                                     </span>
                                 </Link> :
-                                    <span className={`${linkClass} cursor-pointer`}>
+                                    <span className={`${linkClass} cursor-pointer`}
+                                        onClick={handleLogout}
+                                    >
                                         {elements[item.element]}
                                         Logout
                                     </span>

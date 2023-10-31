@@ -4,11 +4,14 @@ import Application from "../pages/Application";
 import { Packages } from "../components/Packages";
 import SingleLocation from "../pages/SingleLocation";
 import MyPackages from "../pages/MyPackages";
+import { homepageLoader } from "./loaders/homepage";
+
 
 export const routes = createBrowserRouter([
     {
       path: "/",
       element: <HomeLayout />,
+      loader: homepageLoader
     },
     {
       path: "/app",
