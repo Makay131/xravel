@@ -34,3 +34,14 @@ export async function getGallery() {
         console.log(err)
     }    
 }
+export async function getSingleLocation(id) {
+    try {
+        const res = await axios.get(`${BASE_URL}packages/${id}`);
+        if(res.statusText !== "OK") throw new Error("Could not fetch the current location!")
+
+        return res.data;
+
+    } catch(err) {
+        console.log(err)
+    }
+}

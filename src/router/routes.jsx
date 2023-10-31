@@ -5,6 +5,7 @@ import { Packages } from "../components/Packages";
 import SingleLocation from "../pages/SingleLocation";
 import MyPackages from "../pages/MyPackages";
 import { homepageLoader } from "./loaders/homepage";
+import { singleLocationLoader } from "./loaders/application";
 
 
 export const routes = createBrowserRouter([
@@ -29,7 +30,9 @@ export const routes = createBrowserRouter([
         },
         {
           path: "locations/:id",
-          element: <SingleLocation />
+          element: <SingleLocation />,
+          loader: (req) => singleLocationLoader({req}),
+          //TODO: MAKE ERROR COMPS
         },
         {
           path: "mylocations",
