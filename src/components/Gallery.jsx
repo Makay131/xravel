@@ -3,57 +3,57 @@ import GalleryItem from "../interface/GalleryItem";
 
 const dummyData = [
     {
-        src: './pics/antarctica.jpg',
+        src: 'https://drive.google.com/uc?export=download&id=1UAEF_6-D-LXN_6wrcnY3z2R05ZscqRlq',
         id: 1,
         slideList: [
-            './pics/dubai.jpg',
-            './pics/hawaii.jpg',
-            './pics/iceland.jpg',
+            'https://drive.google.com/uc?export=download&id=1g3X2eY1XPjFAydDm4UMRQ0FrzUV0HZSR',
+            'https://drive.google.com/uc?export=download&id=1gd4pp_h_XoPCMbT4_ZzPdA4Bd1wo_JsF',
+            'https://drive.google.com/uc?export=download&id=1gUfG8Zx84SAoecwG2rhDZ5gjNJBQDp6j',
         ]
     },
     {
-        src: './pics/dubai.jpg',
+        src: 'https://drive.google.com/uc?export=download&id=1g3X2eY1XPjFAydDm4UMRQ0FrzUV0HZSR',
         id: 2,
         slideList: [
-            './pics/california.jpg',
-            './pics/belize.webp',
-            './pics/iceland.jpg',
+            'https://drive.google.com/uc?export=download&id=1YbKgD3k2Kn3DPhi0Q0L2nle1v1G9fRMF',
+            'https://drive.google.com/uc?export=download&id=1mTogruaNnlC6PKXUCp4_IzMkT7oBVzM7',
+            'https://drive.google.com/uc?export=download&id=1gUfG8Zx84SAoecwG2rhDZ5gjNJBQDp6j',
         ]
     },
     {
-        src: './pics/hawaii.jpg',
+        src: 'https://drive.google.com/uc?export=download&id=1gd4pp_h_XoPCMbT4_ZzPdA4Bd1wo_JsF',
         id: 3,
         slideList: [
-            './pics/belize.webp',
-            './pics/iceland.jpg',
-            './pics/antarctica.jpg',
+            'https://drive.google.com/uc?export=download&id=1mTogruaNnlC6PKXUCp4_IzMkT7oBVzM7',
+            'https://drive.google.com/uc?export=download&id=1gUfG8Zx84SAoecwG2rhDZ5gjNJBQDp6j',
+            'https://drive.google.com/uc?export=download&id=1UAEF_6-D-LXN_6wrcnY3z2R05ZscqRlq',
         ]
     },
     {
-        src: './pics/iceland.jpg',
+        src: 'https://drive.google.com/uc?export=download&id=1gUfG8Zx84SAoecwG2rhDZ5gjNJBQDp6j',
         id: 4,
         slideList: [
-            './pics/dubai.jpg',
-            './pics/hawaii.jpg',
-            './pics/iceland.jpg',
+            'https://drive.google.com/uc?export=download&id=1g3X2eY1XPjFAydDm4UMRQ0FrzUV0HZSR',
+            'https://drive.google.com/uc?export=download&id=1gd4pp_h_XoPCMbT4_ZzPdA4Bd1wo_JsF',
+            'https://drive.google.com/uc?export=download&id=1gUfG8Zx84SAoecwG2rhDZ5gjNJBQDp6j',
         ]
     },
     {
-        src: './pics/california.jpg',
+        src: 'https://drive.google.com/uc?export=download&id=1YbKgD3k2Kn3DPhi0Q0L2nle1v1G9fRMF',
         id: 5,
         slideList: [
-            './pics/california.jpg',
-            './pics/belize.webp',
-            './pics/iceland.jpg',
+            'https://drive.google.com/uc?export=download&id=1YbKgD3k2Kn3DPhi0Q0L2nle1v1G9fRMF',
+            'https://drive.google.com/uc?export=download&id=1mTogruaNnlC6PKXUCp4_IzMkT7oBVzM7',
+            'https://drive.google.com/uc?export=download&id=1gUfG8Zx84SAoecwG2rhDZ5gjNJBQDp6j',
         ]
     },
     {
-        src: './pics/belize.webp',
+        src: 'https://drive.google.com/uc?export=download&id=1mTogruaNnlC6PKXUCp4_IzMkT7oBVzM7',
         id: 6,
         slideList: [
-            './pics/california.jpg',
-            './pics/belize.webp',
-            './pics/iceland.jpg',
+            'https://drive.google.com/uc?export=download&id=1YbKgD3k2Kn3DPhi0Q0L2nle1v1G9fRMF',
+            'https://drive.google.com/uc?export=download&id=1mTogruaNnlC6PKXUCp4_IzMkT7oBVzM7',
+            'https://drive.google.com/uc?export=download&id=1gUfG8Zx84SAoecwG2rhDZ5gjNJBQDp6j',
         ]
     },
 ];

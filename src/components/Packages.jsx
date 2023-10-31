@@ -6,7 +6,7 @@ import useApp from "../hooks/useApp";
 const dummyData = [
     {
         name: 'Antarctica',
-        imageUrl: '/pics/antarctica.jpg',
+        imageUrl: 'https://drive.google.com/uc?export=download&id=1UAEF_6-D-LXN_6wrcnY3z2R05ZscqRlq',
         description: 'Embrace the endless ice adventure with penguins and much more!',
         starsCount: 5,
         generalPrice: 120,
@@ -15,7 +15,7 @@ const dummyData = [
     },
     {
         name: 'Dubai',
-        imageUrl: '/pics/dubai.jpg',
+        imageUrl: 'https://drive.google.com/uc?export=download&id=1g3X2eY1XPjFAydDm4UMRQ0FrzUV0HZSR',
         description: "Dive into Dubai's dazzling dreams such as ziplining and dessert trips!",
         starsCount: 4,
         generalPrice: 120,
@@ -24,7 +24,7 @@ const dummyData = [
     },
     {
         name: 'Hawaii',
-        imageUrl: '/pics/hawaii.jpg',
+        imageUrl: 'https://drive.google.com/uc?export=download&id=1gd4pp_h_XoPCMbT4_ZzPdA4Bd1wo_JsF',
         description: "Hawaiian paradise awaits you with its extreme waves!",
         starsCount: 5,
         generalPrice: 120,
@@ -33,7 +33,7 @@ const dummyData = [
     },
     {
         name: 'Iceland',
-        imageUrl: '/pics/iceland.jpg',
+        imageUrl: 'https://drive.google.com/uc?export=download&id=1gUfG8Zx84SAoecwG2rhDZ5gjNJBQDp6j',
         description: "Icelandic wonders beckon by natural beauties and volcanoes!",
         starsCount: 5,
         generalPrice: 120,
@@ -42,7 +42,7 @@ const dummyData = [
     },
     {
         name: 'California',
-        imageUrl: '/pics/california.jpg',
+        imageUrl: 'https://drive.google.com/uc?export=download&id=1YbKgD3k2Kn3DPhi0Q0L2nle1v1G9fRMF',
         description: "Conquer the desert's fiery heart with a death staring heat!",
         starsCount: 3,
         generalPrice: 120,
@@ -51,7 +51,7 @@ const dummyData = [
     },
     {
         name: 'Belize',
-        imageUrl: '/pics/belize.webp',
+        imageUrl: 'https://drive.google.com/uc?export=download&id=1mTogruaNnlC6PKXUCp4_IzMkT7oBVzM7',
         description: "Nature's hidden gem. You are being summoned by deep waters!",
         starsCount: 4,
         generalPrice: 120,
