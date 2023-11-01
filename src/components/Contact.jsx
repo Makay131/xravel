@@ -1,22 +1,27 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { contactsReducer, initialContacts } from "../reducers/contactsReducer";
 import BaseButton from "../interface/BaseButton"
 import toast from "react-hot-toast";
+import { submitMessage } from "../services";
 
 
 function Contact() {
     const [{name, email, number, subject, message}, dispatch] = useReducer(contactsReducer, initialContacts);
+    const [loading,setLoading] = useState(false);
     function handleChangeInput(e, type) {
             dispatch({type: 'updateInputs', payload: {field: type, value: e.target.value}});
     }
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
+        setLoading(true)
         e.preventDefault();
         if(!name || !email || !number || !subject || !message) {
             toast.error("Please fill all the fields!")
+            setLoading(false)
             return;
         }
         const result = {name, email, number, subject, message};
-        toast.success(`Thank you for your message, ${result.name}! We will be replying you shortly.`)
+        await submitMessage(result);
+        setLoading(false)
         dispatch({type: "resetInputs"})
     }
     return (
@@ -36,7 +41,7 @@ function Contact() {
                         <input className="contact-field" type="text" placeholder="Subject" value={subject} onChange={(e) => handleChangeInput(e, 'subject')} />
                     </div>
                     <textarea className="contact-field h-[20rem] resize-none w-full" name="" id="" cols="30" rows="10" placeholder="Your message..." value={message} onChange={(e) => handleChangeInput(e, 'message')}></textarea>
-                    <BaseButton>Send Message</BaseButton>
+                    <BaseButton>{loading ? 'Sending...' : 'Send Message'}</BaseButton>
                 </form>
             </div>
         </section>

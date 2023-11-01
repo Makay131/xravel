@@ -1,4 +1,5 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const BASE_URL = 'http://localhost:8000/';
 
@@ -43,5 +44,14 @@ export async function getSingleLocation(id) {
 
     } catch(err) {
         console.log(err)
+    }
+}
+export async function submitMessage(body) {
+    try {
+        await axios.post(BASE_URL + 'messages', body)
+        toast.success(`Thank you for your message, ${body.name}! We will be replying you shortly.`)
+    } catch(err) {
+        console.log(err)
+        toast.error(`Your message cannot get uploaded, ${body.name}! Try again.`)
     }
 }
