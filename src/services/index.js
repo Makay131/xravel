@@ -6,10 +6,9 @@ const BASE_URL = 'http://localhost:8000/';
 export async function getUsers() {
     try {
        const res = await axios.get(BASE_URL + 'users')
-       if(!res.ok) throw new Error("Unable to fetch users!")
+       if(res.statusText !== "OK") throw new Error("Unable to fetch users!")
 
-       const { data } = await res.json();
-       return data;
+       return res.data;
     } catch(err) {
         console.log(err)
     }

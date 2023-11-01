@@ -115,6 +115,7 @@
     {
       "id": 1,
       "name": "Marko",
+      "password": "test1234",
       "email": "marko@google.com",
       "packages": [
         1,
@@ -124,6 +125,7 @@
     {
       "id": 2,
       "name": "Enes",
+      "password": "test1234",
       "email": "enes@google.com",
       "packages": [
         2,

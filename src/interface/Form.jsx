@@ -11,6 +11,8 @@ import { useNavigate } from "react-router-dom";
 
 function Form({onShowModal}) {
     const [activeForm, setActiveForm] = useState('login');
+    const [error, setError] = useState(false);
+    const [isLoading, setIsLoading] = useState(false)
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -20,14 +22,24 @@ function Form({onShowModal}) {
     const navigate = useNavigate();
 
     async function handleFormSubmit(e) {
+      setError(false)
+      setIsLoading(true);
       e.preventDefault();
       let result = {};
       if(activeForm === 'login') {
-        if(!email.length || !password.length) return;
+        if(!email.length || !password.length) {
+          setIsLoading(false);
+          return;
+        }
         result = {...result, email, password};
-        const response = await getUsers();
-        if(response.data.filter(res => res.email === email)) {
+        const users = await getUsers();
+        if(users?.filter(user => user.email === email && user.password === password)?.length) {
+            setIsLoading(false);
+            setError(false);
             navigate('/app')
+          } else {
+            setError(true);
+            setIsLoading(false)
           }
       }
       if(activeForm === 'signup') {
@@ -37,9 +49,20 @@ function Form({onShowModal}) {
         console.log(result);
       }
       if(activeForm === 'reset') {
-        if(!email.length) return;
-        //TODO: show check your email message
-        setActiveForm('login');
+        if(!email.length) {
+          setIsLoading(false);
+          return;
+        }
+        const users = await getUsers();
+        if(users?.filter(user => user.email === email)?.length) {
+          setIsLoading(false);
+          toast.success("Check your email, and login again!")
+          setActiveForm('login');
+          setError(false)
+        } else {
+          setIsLoading(false);
+          setError(true)
+        }
       }
       
     }
@@ -49,7 +72,7 @@ function Form({onShowModal}) {
           <h3 className="text-[3rem] text-xravel-color-black-1 text-center uppercase mb-5">{activeForm}</h3>
           {activeForm === 'login' && 
           <>
-            <Login onInputChange={{email: setEmail, password: setPassword}} email={email} password={password} />
+            <Login onInputChange={{email: setEmail, password: setPassword}} email={email} password={password} error={error} isLoading={isLoading} />
             <div className="flex mt-5 items-center gap-2">
               <input className="" type="checkbox" id="remember" />
               <label className="text-[1.4rem]" htmlFor="remember">Remember me</label>
@@ -61,7 +84,7 @@ function Form({onShowModal}) {
           </>
           }
           {activeForm === 'signup' && <Signup onInputChange={{email: setEmail, password: setPassword, rePassword: setRePassword, fullname: setFullname}} email={email} password={password} rePassword={rePassword} fullname={fullname} />}
-          {activeForm === 'reset' && <Reset onActiveForm={setActiveForm} onInputChange={setEmail} />}
+          {activeForm === 'reset' && <Reset onInputChange={setEmail} error={error} isLoading={isLoading} />}
         </form>
     )
 }
