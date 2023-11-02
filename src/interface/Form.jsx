@@ -35,6 +35,7 @@ function Form({onShowModal}) {
         if(users?.filter(user => user.email === email && user.password === password)?.length) {
             setIsLoading(false);
             setError(false);
+            //TODO: setActiveUser as the newly created user
             navigate('/app/locations')
           } else {
             setError(true);
