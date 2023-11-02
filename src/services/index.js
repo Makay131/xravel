@@ -13,7 +13,6 @@ export async function getUsers() {
         console.log(err)
     }
 }
-
 export async function getPackages() {
     try {
         const res = await axios.get(BASE_URL + 'packages');

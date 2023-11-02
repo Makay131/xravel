@@ -49,7 +49,7 @@ function Form({onShowModal}) {
           setIsLoading(false);
           return;
         }
-        result = {...result, email, password, fullname};
+        result = {...result, email, password, name: fullname, packages: []};
         const newUser = await signupUser(result);
         if(newUser.id) {
           //TODO: setActiveUser as the newly created user
