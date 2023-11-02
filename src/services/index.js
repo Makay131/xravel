@@ -54,3 +54,12 @@ export async function submitMessage(body) {
         toast.error(`Your message cannot get uploaded, ${body.name}! Try again.`)
     }
 }
+export async function signupUser(body) {
+    try {
+        const res = await axios.post(BASE_URL + 'users', body)
+        if(res.statusText !== "Created") throw new Error("User could not be created!")
+        return res.data;
+    } catch(err) {
+        console.log(err.message)
+    }
+}

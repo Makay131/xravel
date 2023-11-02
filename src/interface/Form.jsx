@@ -4,7 +4,7 @@ import Login from "./Login";
 import { useState } from "react";
 import Reset from "./Reset";
 
-import {getUsers} from "../services/index";
+import {getUsers, signupUser} from "../services/index";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
@@ -31,12 +31,11 @@ function Form({onShowModal}) {
           setIsLoading(false);
           return;
         }
-        result = {...result, email, password};
         const users = await getUsers();
         if(users?.filter(user => user.email === email && user.password === password)?.length) {
             setIsLoading(false);
             setError(false);
-            navigate('/app')
+            navigate('/app/locations')
           } else {
             setError(true);
             setIsLoading(false)
@@ -44,9 +43,18 @@ function Form({onShowModal}) {
       }
       if(activeForm === 'signup') {
         if(!email.length || !password.length || !rePassword.length || !fullname.length) return;
-        if(password !== rePassword) return; //TODO: show error here
+        if(password !== rePassword) {
+          setError(true);
+          setIsLoading(false);
+          return;
+        }
         result = {...result, email, password, fullname};
-        console.log(result);
+        const newUser = await signupUser(result);
+        if(newUser.id) {
+          //TODO: setActiveUser as the newly created user
+          navigate('/app/locations');
+        }
+        setIsLoading(false);
       }
       if(activeForm === 'reset') {
         if(!email.length) {
@@ -83,7 +91,7 @@ function Form({onShowModal}) {
             </div>
           </>
           }
-          {activeForm === 'signup' && <Signup onInputChange={{email: setEmail, password: setPassword, rePassword: setRePassword, fullname: setFullname}} email={email} password={password} rePassword={rePassword} fullname={fullname} />}
+          {activeForm === 'signup' && <Signup onInputChange={{email: setEmail, password: setPassword, rePassword: setRePassword, fullname: setFullname}} email={email} password={password} rePassword={rePassword} fullname={fullname} error={error} isLoading={isLoading} />}
           {activeForm === 'reset' && <Reset onInputChange={setEmail} error={error} isLoading={isLoading} />}
         </form>
     )
