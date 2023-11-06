@@ -1,7 +1,10 @@
+import { useAuth } from "../contexts/AuthContext"
+
 function UserCard() {
+    const {onlineUser} = useAuth();
     return (
         <div className="text-center text-white">
-            Welcome, Marko!
+            Welcome, {onlineUser?.name}!
         </div>
     )
 }

@@ -7,6 +7,7 @@ import Reset from "./Reset";
 import {getUsers, signupUser} from "../services/index";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 
 function Form({onShowModal}) {
@@ -18,6 +19,8 @@ function Form({onShowModal}) {
     const [password, setPassword] = useState("");
     const [rePassword, setRePassword] = useState("");
     const [fullname, setFullname] = useState("");
+
+    const { setOnlineUser } = useAuth()
 
     const navigate = useNavigate();
 
@@ -32,10 +35,11 @@ function Form({onShowModal}) {
           return;
         }
         const users = await getUsers();
-        if(users?.filter(user => user.email === email && user.password === password)?.length) {
+        const activeUser = users?.filter(user => user.email === email && user.password === password)
+        if(activeUser?.length) {
             setIsLoading(false);
             setError(false);
-            //TODO: setActiveUser as the newly created user
+            setOnlineUser(activeUser[0]);
             navigate('/app/locations')
           } else {
             setError(true);
@@ -52,7 +56,7 @@ function Form({onShowModal}) {
         result = {...result, email, password, name: fullname, packages: []};
         const newUser = await signupUser(result);
         if(newUser.id) {
-          //TODO: setActiveUser as the newly created user
+          setOnlineUser(newUser);
           navigate('/app/locations');
         }
         setIsLoading(false);

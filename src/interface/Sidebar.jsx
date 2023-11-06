@@ -5,14 +5,17 @@ import UserCard from "../components/UserCard";
 
 import { AiFillEnvironment, AiFillIdcard, AiTwotoneApi } from "react-icons/ai";
 import AppConfig from "../config/application.json";
+import { useAuth } from "../contexts/AuthContext";
 
 const linkClass = "flex items-center gap-4 text-white hover:text-xravel-color-orange-1 transition";
 
 function Sidebar() {
+    const { setOnlineUser } = useAuth();
+
     const navigate = useNavigate();
 
     function handleLogout() {
-        //TODO: delete user session
+        setOnlineUser(null)
         navigate("/");
     }
 

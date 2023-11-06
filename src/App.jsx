@@ -1,10 +1,11 @@
 import { RouterProvider } from 'react-router-dom';
 import {routes} from './router/routes';
 import { Toaster } from 'react-hot-toast';
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   return (
-  <>
+  <AuthProvider>
   <RouterProvider router={routes} />
   <Toaster position="top-center" gutter={12} containerStyle={{top: "10%"}} toastOptions={{
           success: {
@@ -23,7 +24,7 @@ function App() {
             top: "100px"
           }
         }} />
-  </>)
+  </AuthProvider>)
 }
 
 export default App;
