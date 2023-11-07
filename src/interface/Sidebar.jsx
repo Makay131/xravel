@@ -15,8 +15,8 @@ function Sidebar() {
     const navigate = useNavigate();
 
     function handleLogout() {
-        setOnlineUser(null)
         navigate("/");
+        setOnlineUser(null)
     }
 
     const elements = {

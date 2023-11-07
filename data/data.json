@@ -6,7 +6,7 @@
       "description": "Embrace the endless ice adventure with penguins and much more!",
       "starsCount": 5,
       "generalPrice": 120,
-      "discountPrice": 90,
+      "discountPrice": 190,
       "id": 1
     },
     {
@@ -15,7 +15,7 @@
       "description": "Dive into Dubai's dazzling dreams such as ziplining and dessert trips!",
       "starsCount": 4,
       "generalPrice": 120,
-      "discountPrice": 90,
+      "discountPrice": 190,
       "id": 2
     },
     {
@@ -24,7 +24,7 @@
       "description": "Hawaiian paradise awaits you with its extreme waves!",
       "starsCount": 5,
       "generalPrice": 120,
-      "discountPrice": 90,
+      "discountPrice": 190,
       "id": 3
     },
     {
@@ -33,7 +33,7 @@
       "description": "Icelandic wonders beckon by natural beauties and volcanoes!",
       "starsCount": 5,
       "generalPrice": 120,
-      "discountPrice": 90,
+      "discountPrice": 190,
       "id": 4
     },
     {
@@ -42,7 +42,7 @@
       "description": "Conquer the desert's fiery heart with a death staring heat!",
       "starsCount": 3,
       "generalPrice": 120,
-      "discountPrice": 90,
+      "discountPrice": 190,
       "id": 5
     },
     {
@@ -51,7 +51,7 @@
       "description": "Nature's hidden gem. You are being summoned by deep waters!",
       "starsCount": 4,
       "generalPrice": 120,
-      "discountPrice": 90,
+      "discountPrice": 190,
       "id": 6
     }
   ],

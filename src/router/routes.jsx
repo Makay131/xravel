@@ -5,7 +5,7 @@ import { Packages } from "../components/Packages";
 import SingleLocation from "../pages/SingleLocation";
 import MyPackages from "../pages/MyPackages";
 import { homepageLoader } from "./loaders/homepage";
-import { singleLocationLoader } from "./loaders/application";
+import { getPackagesLoader, singleLocationLoader } from "./loaders/application";
 
 
 export const routes = createBrowserRouter([
@@ -27,6 +27,7 @@ export const routes = createBrowserRouter([
         {
           path: "locations",
           element: <Packages />,
+          loader: getPackagesLoader,
         },
         {
           path: "locations/:id",

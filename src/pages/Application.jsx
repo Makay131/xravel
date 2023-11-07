@@ -1,8 +1,13 @@
 import SwitchButton from "../interface/SwitchButton";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import Sidebar from "../interface/Sidebar";
+import { useAuth } from "../contexts/AuthContext";
 
 function Application() {
+    const {onlineUser} = useAuth();
+
+    if(onlineUser === null) return <Navigate to="/" replace={true} />
+    
     return (
         <div className="px-4 pb-6 relative grid place-items-center">
             <SwitchButton />

@@ -8,12 +8,15 @@ import {Home} from '../components/Home'
 import {Packages} from '../components/Packages'
 import {Services} from '../components/Services'
 import {Gallery} from '../components/Gallery'
-import { useLoaderData } from 'react-router-dom';
+import { Navigate, useLoaderData } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 function HomeLayout() {
     const [showModal, setShowModal] = useState(false);
 
     const {packages, gallery} = useLoaderData();
+
+    const {onlineUser} = useAuth();
 
     const homeRef = useRef(null);
     const locationsRef = useRef(null);
@@ -30,6 +33,9 @@ function HomeLayout() {
     const scrollToSection = (referenceName) => {
       refs[referenceName].current.scrollIntoView({ behavior: 'smooth' });
     };
+
+    if(onlineUser !== null) return <Navigate to="/app/locations" replace={true} />
+
     return (
         <>
             <Header onScrollTo={scrollToSection} showModal={showModal} onShowModal={setShowModal} />
