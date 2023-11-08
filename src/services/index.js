@@ -62,3 +62,12 @@ export async function signupUser(body) {
         console.log(err.message)
     }
 }
+export async function buyPackage(userId, body) {
+    try {
+        const res = await axios.patch(BASE_URL + 'users/' + userId, body)
+        console.log(res)
+        return res;
+    } catch(err) {
+        console.error(err.message)
+    }
+}
