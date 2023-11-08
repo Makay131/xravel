@@ -7,7 +7,7 @@ const PackagesSection = ({data, booked = false, onShowModal}, ref) => {
     const navigate = useNavigate();
     const appOptions = useApp();
     const onlyArrayData = useLoaderData();
-    const computedData = Array.isArray(onlyArrayData) ? onlyArrayData : data;
+    const computedData = booked ? data : Array.isArray(onlyArrayData) ? onlyArrayData : data;
     return (
         <section className="home-section" ref={ref}>
             <h1 className="section-heading">packages</h1>

@@ -37,7 +37,8 @@ export const routes = createBrowserRouter([
         },
         {
           path: "mylocations",
-          element: <MyPackages />
+          element: <MyPackages />,
+          loader: getPackagesLoader,
         },
       ]
     }
